@@ -68,7 +68,7 @@ const LandingPage = ({navigation}) => {
       <Text  onPress={() => navigation.toggleDrawer()} style={{color: 'black', width: 30, fontSize: 22}}>&#9776; </Text>
       
       <Image style={{width: 50, height: 35}} source={require("../../assets/bene.png")} resizeMode="contain" />
-      <Text style={{color: 'indigo', fontSize: 20, fontWeight: 'bold'}}>Labharthi Manager</Text>
+      <Text style={{color: 'indigo', fontSize: 20, fontWeight: 'bold'}}>Labharthi App</Text>
     </View>
     
     

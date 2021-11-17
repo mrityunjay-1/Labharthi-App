@@ -33,6 +33,15 @@ const FeedbackScreen = ({navigation}) => {
   return (
     <>
       
+      {/* Header Area */}
+      <View style={{flexDirection: 'row', backgroundColor: 'white', alignItems: 'center', paddingLeft: 20, elevation: 5, height: 60}}>
+        <Text  onPress={() => navigation.toggleDrawer()} style={{color: 'black', width: 30, fontSize: 22}}>&#9776; </Text>
+        
+        <Text style={{color: 'indigo', fontSize: 20, fontWeight: 'bold'}}> 🗨 Feedback </Text>
+      </View>
+      
+      
+      
       <Text style={{margin: 10}}>Write Your Feedback...</Text>
     
       <TextInput

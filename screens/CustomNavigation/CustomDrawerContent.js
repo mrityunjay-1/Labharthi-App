@@ -29,11 +29,11 @@ const CustomDrawerContent = (props) => {
       
       
       <Pressable onPress={() => props.navigation.navigate("Guide")} >
-        <Text style={styles.n}>  🔰 Guide</Text>
+        <Text style={styles.n}> 🔰 Guide</Text>
       </Pressable>
       
       <Pressable onPress={() => props.navigation.navigate("ExportInExcelScreen")} >
-        <Text style={styles.n}>  Export Labharthi in Excel</Text>
+        <Text style={styles.n}> 📁 Export Labharthi Data</Text>
       </Pressable>
       
       <Pressable onPress={async () => await Share.share({message: "https://mrityunjay-1.github.io/portfolio"})} >

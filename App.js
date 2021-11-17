@@ -84,7 +84,7 @@ const MainApp = () => {
           options={{tabBarIcon: () => <Text style={{fontSize: 20}}> 📢 </Text>}}
           initialParams={{item: {id: "", name: "", parent: "", aadhaar: "", contact: ""}}}
         />
-        <Tab.Screen name="ImporatantLinks" component={ImpLinksStack} options={{tabBarIcon: () => <Text style={{fontSize: 20}}>🔆</Text>}}  />
+        <Tab.Screen name="ImporatantLinks" component={ImpLinksStack} options={{tabBarIcon: () => <Text style={{fontSize: 20}}>🔗</Text>}}  />
         
       </Tab.Navigator>
     </>
@@ -109,8 +109,8 @@ const App = () => {
               options={{headerShown: false}}
                 
             />
-            <Drawer.Screen name="Feedback" component={FeedbackScreen} />
-            <Drawer.Screen name="Guide" component={GuideStack} />
+            <Drawer.Screen name="Feedback" component={FeedbackScreen} options={{headerShown: false}} />
+            <Drawer.Screen name="Guide" component={GuideStack} options={{headerShown: false}} />
             <Drawer.Screen name="ExportInExcelScreen" component={ExportInExcelScreen} />
           </Drawer.Navigator>
         </NavigationContainer>
