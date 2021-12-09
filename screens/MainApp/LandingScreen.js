@@ -129,7 +129,7 @@ const LandingPage = ({navigation}) => {
               <Text style={{color: 'grey'}}>{item.parent}</Text>
               <Text style={{color: 'indigo', fontWeight: 'bold', fontSize: 16, paddingVertical: 5}}>{item.aadhaar}</Text>
               <Text style={{color: 'green', fontSize: 15}} onPress={() => calll(item.contact)}>📞 +91 {item.contact}</Text>
-            
+              
               
               {/* <Text style={styles.otp}>Token</Text> */}
             </View>
@@ -144,6 +144,8 @@ const LandingPage = ({navigation}) => {
             </View>
             
           </View>
+          // {/* { item.otp!= "" ? <Text style={{color: 'black', padding: '1%', margin: 10,marginLeft: 0, borderColor: 'black', borderWidth: 1, borderRadius: 1000}} onPress={() => calll(item.contact)}>  OTP =  {item.otp }</Text> : null } */}
+            
         );
       }}
       

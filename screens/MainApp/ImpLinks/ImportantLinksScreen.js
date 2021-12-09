@@ -26,8 +26,16 @@ const links = [
 const ImportantLinksScreen = ({navigation}) => {
   return (
     <>
-      <View style={{height: 50, justifyContent: 'center', elevation: 10, marginBottom: 10}}>
-        <Text style={{fontSize: 20, color: 'black', fontWeight: 'bold', paddingLeft: 20}}>🔗  Important Links </Text>
+      <View style={{padding: '3%', height: 60, justifyContent: 'center', elevation: 10, backgroundColor: 'white'}}>
+        <Text style={{fontSize: 20,  color: 'black', fontWeight: 'bold', paddingLeft: 20}}>🔗  Important Links </Text>
+      </View>
+      
+      <View style={{ padding: '3%', marginTop: 10, flexDirection: 'row', backgroundColor: 'yellow', alignItems: 'center'}}>
+        <Text style={{width: '10%', textAlign: 'center', fontSize: 30 }}>⚠</Text>
+        <View style={{width: '90%', }}>
+          <Text style={{color: 'black', fontSize: 15, textAlign: 'center'}}> सरकारी अधिकारिक वेबसाइट पर काम करने हेतु </Text>
+          <Text style={{color: 'black', fontSize: 12, textAlign: 'center'}}> Working on Government Official Website  </Text>
+        </View>
       </View>
     
       <FlatList

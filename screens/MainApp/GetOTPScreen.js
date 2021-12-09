@@ -13,8 +13,11 @@ const GetOTPScreen = ({navigation, route}) => {
   
   // updating otp in labharthi form
   const updateotp = () => {
-    SQLiteDatabaseModule.update(`update labharthi set otp="${otp}" where id="${route.params.item.id}"`);
+    
+    console.log("OTP = ", otp);
+    SQLiteDatabaseModule.updateLabharthi(`update labharthi set recentOTP="${otp}" where aadhaar="${route.params.item.aadhaar}"`);
   }
+  
   
   
   
@@ -31,6 +34,9 @@ const GetOTPScreen = ({navigation, route}) => {
   }, []);
   
   
+  // console.log("OTP = ", otp);
+  
+  
   
   return (
     <>
@@ -45,24 +51,30 @@ const GetOTPScreen = ({navigation, route}) => {
         originWhitelist={['*']}
         ref={webview}
         source={{uri: "http://164.100.251.19/AanganPublic/GetToken.aspx"}}
-        injectedJavaScript={ `document.getElementById("ctl00_MainContent_txtAadhar").value = ${route.params.item.aadhaar}`}
-        
-        // injectedJavaScriptBeforeContentLoaded={}
-        
-        onMessage={(res) => setOtp(res.nativeEvent.data) }
-        
+        injectedJavaScript={ ` document.getElementById("ctl00_MainContent_txtAadhar").value = ${route.params.item.aadhaar}; `}
+
+        // injectedJavaScriptBeforeContentLoaded={`document.body.style.padding = "0px"`}
+
+        onMessage={(res) => {
+          setOtp(res.nativeEvent.data);
+          if(res.nativeEvent.data !== undefined && res.nativeEvent.data != ""){
+            updateotp();
+            console.log("length = ", res.nativeEvent.data.length);
+          }
+        }}
+
         onNavigationStateChange={() => {
-          
+
           webview.current.injectJavaScript(`
           let token = "";
-          
+
           let tr1 = document.getElementsByTagName("tr");
           for(let i = 1; i < tr1.length; i++){
             token += tr1[i].getElementsByTagName("td")[7].innerText.split(":")[2] + ", ";
           }
-          
+
           // let x = document.getElementsByTagName("tr")[2].getElementsByTagName("td")[7].innerText.split(':')[2];
-          
+
           window.ReactNativeWebView.postMessage(token);
           
           `);          
